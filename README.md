@@ -5,6 +5,7 @@ Purchased the domain.
 # AWS
 Used aws.amazon.com to create an EC2 instance.
 You'll need to allow public access on a port on which your service will listen, used https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html to add a security group (for that specific port which needs to be opened to allow public access).
+Create new ssh key using ssh keygen.
 
 # Domain
 Added the public IP address of the EC2 instance as the nameserver for the domain on the domain providers portal.
@@ -15,3 +16,5 @@ Used the github repository https://github.com/sahat/hackathon-starter to create 
 
 # GitHub
 Create a new repository
+Add public key as authorized keys in github
+Pushed cloned repository to the new one.
