@@ -1,6 +1,7 @@
 # sauravsood.com
 
 Purchased the domain.
+Helpful tutorial https://www.youtube.com/watch?v=k_0ZzvHbNBQ&list=PLillGF-RfqbYRpji8t4SxUkMxfowG4Kqp&index=1
 
 # AWS
 Used aws.amazon.com to create an EC2 instance.
