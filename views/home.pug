@@ -1,27 +1,30 @@
 extends layout
 
 block content
-  h1 Personal Public Webspace
-  p.lead A personal project, building a website.
-  hr
-  .row
-    .col-md-6
-      h2 Career
-      p There's no one way to tell one's story. Here's a beginning though. My Career - A book still being written, a story yet to be told, an idea yet to materialise.
-      p
-        a.btn.btn-raised(href='#', role='button') View details »
-    .col-md-6
-      h2 Academic Profile
-      p I'll say its a work in progress and be it may, for the forseeable future. Learning is a lifelong process, and I'm hoping to keep this segment growing.
-      p
-        a.btn.btn-raised(href='#', role='button') View details »
-    .col-md-6
-      h2 Interests
-      p Interest do deserve a section of their own as they change and grow with you over the course of time. Ranging from sports to youtube channels to reading to <i>making this website <i>, to the wierd love-hate relationship with fitness & food.
-      p
-        a.btn.btn-raised(href='#', role='button') View details »
-    .col-md-6
-      h2 Achievements
-      p A chronological story of all achievemtns, no matter small or big! Ranging from attending an event, to participation certificate to winning moments.
-      p
-        a.btn.btn-raised(href='#', role='button') View details »
+  // link(rel='stylesheet', href='/css/homepage.css')
+  img(src='https://s3-ap-southeast-1.amazonaws.com/sauravsood.com/IMG-20180224-WA0021.jpg')
+  .container.homepage-center-image
+    h1 Personal Public Webspace
+    p.lead A personal project, building a website.
+    hr
+    .row
+      .col-md-6
+        h2 Career
+        p There's no one way to tell one's story. Here's a beginning though. My Career - A book still being written, a story yet to be told, an idea yet to materialise.
+        p
+          a.btn.btn-raised(href='career', role='button') View details »
+      .col-md-6
+        h2 Academic Profile
+        p I'll say its a work in progress and be it may, for the forseeable future. Learning is a lifelong process, and I'm hoping to keep this segment growing.
+        p
+          a.btn.btn-raised(href='#', role='button') View details »
+      .col-md-6
+        h2 Interests
+        p Interest do deserve a section of their own as they change and grow with you over the course of time. Ranging from sports to youtube channels to reading to making this website, to the wierd love-hate relationship with fitness & food.
+        p
+          a.btn.btn-raised(href='#', role='button') View details »
+      .col-md-6
+        h2 Achievements
+        p A chronological story of all achievemtns, no matter small or big! Ranging from attending an event, to participation certificate to winning moments. A brain dump of all.
+        p
+          a.btn.btn-raised(href='#', role='button') View details »
