@@ -2,7 +2,7 @@ extends layout
 
 block content
   img(src='https://s3-ap-southeast-1.amazonaws.com/sauravsood.com/IMG-20180224-WA0021.jpg', width='100%')
-  .container.homepage-center-image
+  .container(style="padding-top:10px;")
     h1 Personal Public Webspace
     p.lead A personal project, building a website.
     hr
@@ -21,9 +21,9 @@ block content
         h2 Interests
         p Interest do deserve a section of their own as they change and grow with you over the course of time. Ranging from sports to youtube channels to reading to making this website, to the wierd love-hate relationship with fitness & food.
         p
-          a.btn.btn-raised(href='#', role='button') View details »
+          a.btn.btn-raised(href='interests', role='button') View details »
       .col-md-6
         h2 Achievements
         p A chronological story of all achievemtns, no matter small or big! Ranging from attending an event, to participation certificate to winning moments. A brain dump of all.
         p
-          a.btn.btn-raised(href='#', role='button') View details »
+          a.btn.btn-raised(href='achievements', role='button') View details »

@@ -35,6 +35,8 @@ const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
 const careerController = require('./controllers/career');
 const academicsController = require('./controllers/academics');
+const achievementsController = require('./controllers/achievements');
+const interestsController = require('./controllers/interests');
 
 /**
  * API keys and Passport configuration.
@@ -149,6 +151,8 @@ app.post('/account/delete', passportConfig.isAuthenticated, userController.postD
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 app.get('/career', careerController.index);
 app.get('/academics', academicsController.index);
+app.get('/achievements', achievementsController.index);
+app.get('/interests', interestsController.index);
 
 /**
  * API examples routes.
