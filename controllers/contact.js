@@ -69,7 +69,7 @@ exports.postContact = async (req, res) => {
       cc: `${fromEmail}`,
       //from: `${fromName} <${fromEmail}>`,
       from: process.env.SITE_CONTACT_EMAIL,
-      subject: 'Contact Form | Hackathon Starter',
+      subject: 'Contact Form | Saurav Sood',
       text: req.body.message
     };
 
