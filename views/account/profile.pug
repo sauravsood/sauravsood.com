@@ -89,17 +89,17 @@ block content
     .pb-2.mt-2.mb-4.border-bottom
       h3 Linked Accounts
     .form-group
-      .offset-sm-3.col-md-7.pl-2
+      //.offset-sm-3.col-md-7.pl-2
         if user.instagram
           p.mb-1: a.text-danger(href='/account/unlink/instagram') Unlink your Instagram account
         else
           p.mb-1: a(href='/auth/instagram') Link your Instagram account
-      .offset-sm-3.col-md-7.pl-2
+      //.offset-sm-3.col-md-7.pl-2
         if user.google
           p.mb-1: a.text-danger(href='/account/unlink/google') Unlink your Google account
         else
           p.mb-1: a(href='/auth/google') Link your Google account
-      .offset-sm-3.col-md-7.pl-2
+      //.offset-sm-3.col-md-7.pl-2
         if user.facebook
           p.mb-1: a.text-danger(href='/account/unlink/facebook') Unlink your Facebook account
         else
@@ -123,7 +123,7 @@ block content
           p.mb-1: a.text-danger(href='/account/unlink/linkedin') Unlink your LinkedIn account
         else
           p.mb-1: a(href='/auth/linkedin') Link your LinkedIn account
-      .offset-sm-3.col-md-7.pl-2
+      //.offset-sm-3.col-md-7.pl-2
         if user.steam
           p.mb-1: a.text-danger(href='/account/unlink/steam') Unlink your Steam account
         else
@@ -133,7 +133,7 @@ block content
           p.mb-1: a.text-danger(href='/account/unlink/twitch') Unlink your Twitch account
         else
           p.mb-1: a(href='/auth/twitch') Link your Twitch account
-      .offset-sm-3.col-md-7.pl-2
+      //.offset-sm-3.col-md-7.pl-2
         if user.quickbooks
           p.mb-1: a.text-danger(href='/account/unlink/quickbooks') Unlink your QuickBooks account
         else
