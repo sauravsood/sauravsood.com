@@ -1,6 +1,7 @@
 # sauravsood.com
 
 Purchased the domain.
+Helpful tutorial https://www.youtube.com/watch?v=k_0ZzvHbNBQ&list=PLillGF-RfqbYRpji8t4SxUkMxfowG4Kqp&index=1
 
 # AWS
 Used aws.amazon.com to create an EC2 instance.
@@ -18,3 +19,4 @@ Used the github repository https://github.com/sahat/hackathon-starter to create 
 Create a new repository
 Add public key as authorized keys in github
 Pushed cloned repository to the new one.
+## Facing troubles with linking commits to the gitHub graph
