@@ -19,3 +19,4 @@ Used the github repository https://github.com/sahat/hackathon-starter to create 
 Create a new repository
 Add public key as authorized keys in github
 Pushed cloned repository to the new one.
+## Facing troubles with linking commits to the gitHub graph
