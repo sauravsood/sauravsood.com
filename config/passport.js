@@ -8,6 +8,7 @@ const { Strategy: SnapchatStrategy } = require('passport-snapchat');
 const { Strategy: TwitterStrategy } = require('passport-twitter');
 const { Strategy: TwitchStrategy } = require('passport-twitch-new');
 const { Strategy: GitHubStrategy } = require('passport-github2');
+const { Strategy: MediumStrategy } = require('passport-local');
 const { OAuth2Strategy: GoogleStrategy } = require('passport-google-oauth');
 const { Strategy: LinkedInStrategy } = require('passport-linkedin-oauth2');
 const { Strategy: OpenIDStrategy } = require('passport-openid');
@@ -225,6 +226,66 @@ passport.use(new GitHubStrategy({
           user.email = _.get(_.orderBy(profile.emails, ['primary', 'verified'], ['desc', 'desc']), [0, 'value'], null);
           user.github = profile.id;
           user.tokens.push({ kind: 'github', accessToken });
+          user.profile.name = profile.displayName;
+          user.profile.picture = profile._json.avatar_url;
+          user.profile.location = profile._json.location;
+          user.profile.website = profile._json.blog;
+          user.save((err) => {
+            done(err, user);
+          });
+        }
+      });
+    });
+  }
+}));
+
+/**
+ * Sign in with Medium.
+ */
+passport.use(new MediumStrategy({
+  clientID: process.env.MEDIUM_ID,
+  clientSecret: process.env.MEDIUM_SECRET,
+  callbackURL: `${process.env.BASE_URL}/auth/medium/callback`,
+  passReqToCallback: true,
+  scope: ['user:email']
+}, (req, accessToken, refreshToken, profile, done) => {
+  if (req.user) {
+    User.findOne({ medium: profile.id }, (err, existingUser) => {
+      if (existingUser) {
+        req.flash('errors', { msg: 'There is already a Medium account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+        done(err);
+      } else {
+        User.findById(req.user.id, (err, user) => {
+          if (err) { return done(err); }
+          user.medium = profile.id;
+          user.tokens.push({ kind: 'medium', accessToken });
+          user.profile.name = user.profile.name || profile.displayName;
+          user.profile.picture = user.profile.picture || profile._json.avatar_url;
+          user.profile.location = user.profile.location || profile._json.location;
+          user.profile.website = user.profile.website || profile._json.blog;
+          user.save((err) => {
+            req.flash('info', { msg: 'Medium account has been linked.' });
+            done(err, user);
+          });
+        });
+      }
+    });
+  } else {
+    User.findOne({ medium: profile.id }, (err, existingUser) => {
+      if (err) { return done(err); }
+      if (existingUser) {
+        return done(null, existingUser);
+      }
+      User.findOne({ email: profile._json.email }, (err, existingEmailUser) => {
+        if (err) { return done(err); }
+        if (existingEmailUser) {
+          req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with Medium manually from Account Settings.' });
+          done(err);
+        } else {
+          const user = new User();
+          user.email = _.get(_.orderBy(profile.emails, ['primary', 'verified'], ['desc', 'desc']), [0, 'value'], null);
+          user.medium = profile.id;
+          user.tokens.push({ kind: 'medium', accessToken });
           user.profile.name = profile.displayName;
           user.profile.picture = profile._json.avatar_url;
           user.profile.location = profile._json.location;

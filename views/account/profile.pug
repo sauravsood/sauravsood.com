@@ -138,3 +138,8 @@ block content
           p.mb-1: a.text-danger(href='/account/unlink/quickbooks') Unlink your QuickBooks account
         else
           p.mb-1: a(href='/auth/quickbooks') Link your QuickBooks account
+        .offset-sm-3.col-md-7.pl-2
+        if user.medium
+          p.mb-1: a.text-danger(href='/account/unlink/medium') Unlink your Medium account
+        else
+          p.mb-1: a(href='/auth/medium') Link your Medium account
