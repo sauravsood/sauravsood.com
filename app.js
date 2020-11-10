@@ -37,6 +37,7 @@ const careerController = require('./controllers/career');
 const academicsController = require('./controllers/academics');
 const achievementsController = require('./controllers/achievements');
 const interestsController = require('./controllers/interests');
+const blogController = require('./controllers/blog');
 
 /**
  * API keys and Passport configuration.
@@ -153,6 +154,7 @@ app.get('/career', careerController.index);
 app.get('/academics', academicsController.index);
 app.get('/achievements', achievementsController.index);
 app.get('/interests', interestsController.index);
+app.get('/blog', blogController.index);
 
 /**
  * API examples routes.

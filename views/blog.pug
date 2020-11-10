@@ -1,0 +1,31 @@
+extends layout
+
+block content
+
+  .container-fluid(style='padding-top:80px;')
+    .row(style="padding-top:10px;")
+      
+
+      // Blog render script
+      script(src="https://www.retainable.app/assets/retainable/rss-embed/retainable-rss-embed.js")
+
+    //.row(style="padding-top:10px;")
+      a.twitter-follow-button(href="https://twitter.com/saurav_smiles?ref_src=twsrc%5Etfw", data-show-count="false") Follow @saurav_smiles
+      script(async, src="https://platform.twitter.com/widgets.js", charset="utf-8")
+    //.row(style="padding-top:10px;")
+      .col-md-12(style="text-align:center;")
+        a.twitter-timeline(href="https://twitter.com/saurav_smiles?ref_src=twsrc%5Etfw") Tweets by saurav_smiles
+        script(async, src="https://platform.twitter.com/widgets.js", charset="utf-8")
+    .row(style="padding:20px;")
+      #medium-widget
+        script(src="https://medium-widget.pixelpoint.io/widget.js")
+        script.
+          MediumWidget.Init(
+          {renderTo: '#medium-widget',
+          params:
+          {"resource":"https://medium.com/@saurav-sood",
+          "postsPerLine":4,
+          "limit":10,
+          "picture":"small",
+          "fields":["description","author","claps","publishAt"],
+          "ratio":"landscape"}})
