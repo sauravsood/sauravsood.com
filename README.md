@@ -20,3 +20,31 @@ Create a new repository
 Add public key as authorized keys in github
 Pushed cloned repository to the new one.
 ## Facing troubles with linking commits to the gitHub graph
+
+# node
+sudo npm install -g nodemon
+npm update node
+node -v
+(npm run start&)
+yarn start
+yarn test
+npm -v
+sudo npm install npm@latest -g
+
+
+In /User/sood folder - run the following command
+git clone http://github.com/creationix/nvm.git .nvm
+
+Helpful links
+https://heynode.com/tutorial/install-nodejs-locally-nvm
+https://www.codegrepper.com/code-examples/javascript/npm+start+error+code+1
+
+sudo npm install --unsafe-perm -g node-sass
+
+In repo folder, run
+sudo npm install -g npm
+npm install
+
+To change the version of node
+$ npm install -g n
+$ n x.xx.x
